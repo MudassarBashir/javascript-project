@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>How to add JavaScript to your web page</title>
-        <link rel="stylesheet" type="text/css" media="all" href="styles/styles.css"/>
-    </head>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Web page output</title>
+    <link rel="stylesheet" type="text/css" media="all" href="styles/styles.css"/>
+</head>
+<body>
 
-    <body>
-         <script src="scripts/myscript1.js"></script>
-        <h1>How to add JavaScript to your web page</h1>
-        <script src="scripts/myscript2.js"></script>
-    </body>
+<h1>Web page output</h1>
+
+<p id="message">start message</p>
+
+<script>
+    /* Outputting the square of a number */
+    var n = 42;
+    var msg = n + " squared is " + (n * n);
+    var p = document.getElementById("message");
+    p.innerHTML = "<em>" + msg + "</em>";
+</script>
+
+</body>
 </html>
