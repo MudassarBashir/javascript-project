@@ -2,21 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Web page output</title>
+    <title>Error Handling</title>
     <link rel="stylesheet" type="text/css" media="all" href="styles/styles.css"/>
 </head>
 <body>
 
-<h1>Web page output</h1>
+<h1>Error handling</h1>
 
-<p id="message">start message</p>
+<p id="message"></p>
 
 <script>
-    /* Outputting the square of a number */
-    var n = 42;
-    var msg = n + " squared is " + (n * n);
-    var p = document.getElementById("message");
-    p.innerHTML = "<em>" + msg + "</em>";
+
+    // set-up variables
+    var cakes = 10;
+    var children = 3;
+    var msg;
+
+    if (children > 0) {
+
+        // cake calculation
+        var cakesEach = Math.floor(cakes / children);
+        var leftOver = cakes % children;
+        msg = "Each child receives " + cakesEach + " cakes, with " + leftOver + " left over";
+
+    }
+    else {
+        msg = "Invalid input!";
+    }
+
+    try {
+        var p = document.getElementById("messageX");
+        if (p) {
+            p.textContent = msg;
+        }
+    }
+    catch (e) {
+        console.error(e);
+    }
+    finally {
+        alert("done");
+    }
+
 </script>
 
 </body>
